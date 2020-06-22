@@ -2,4 +2,4 @@
 
 # Screenshot and Gif
 
-<img src="assets/images/fade_animation.jpg" height="300em" />
+<img src="app/src/main/res/drawable/tablayout.jpg" height="300em" />
