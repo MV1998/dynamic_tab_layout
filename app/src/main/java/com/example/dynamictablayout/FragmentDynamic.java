@@ -1,5 +1,6 @@
 package com.example.dynamictablayout;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -29,6 +30,7 @@ public class FragmentDynamic extends Fragment {
         fragmentManager.beginTransaction().setMaxLifecycle(fragment, Lifecycle.State.RESUMED);
 
         view = inflater.inflate(R.layout.fragment_dynamic, container, false);
+        Log.d(TAG, "onCreateView: ");
         return view;
     }
 
@@ -43,6 +45,7 @@ public class FragmentDynamic extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        Log.d(TAG, "onViewCreated: ");
     }
 
     @Override
@@ -53,5 +56,29 @@ public class FragmentDynamic extends Fragment {
         c = view.findViewById(R.id.textView);
         c.setText("Fragment - " + (val + 1));
         Log.d(TAG, "fragment: " + (val + 1));
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        Log.d(TAG, "onCreate: ");
+    }
+
+    @Override
+    public void onAttachFragment(@NonNull Fragment childFragment) {
+        super.onAttachFragment(childFragment);
+        Log.d(TAG, "onAttachFragment: ");
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        Log.d(TAG, "onActivityCreated: ");
+    }
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        Log.d(TAG, "onAttach: ");
     }
 }
